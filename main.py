@@ -6,6 +6,7 @@ from telebot import TeleBot
 from telebot.types import Message, ReplyKeyboardMarkup
 import config
 from markups import *
+import os
 
 bot = TeleBot(config.TOKEN)
 
@@ -34,6 +35,9 @@ def gen(message: Message):
 def send_qr(message: Message):
     chat_id = message.from_user.id
     try:
+        media_dir = 'media'
+        if not os.path.exists(media_dir):
+            os.makedirs(media_dir)
         if message.text:
             value = message.text
         else:
