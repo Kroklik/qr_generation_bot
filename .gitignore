@@ -1,3 +1,5 @@
 venv/
 config.py
 echo "media/" >> .gitignore
+echo ".idea/" >> .gitignore
+echo "__pycache__/" >> .gitignore
